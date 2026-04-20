@@ -10,8 +10,9 @@ import { motion, AnimatePresence } from "framer-motion";
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Specialities", href: "/specialities" },
+  { name: "Treatments", href: "/treatments" },
   { name: "Gallery", href: "/gallery" },
+  { name: "Blogs", href: "/blog" },
 ];
 
 export default function Header() {
@@ -36,8 +37,8 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-dark-900/80 backdrop-blur-md py-4 shadow-[0_10px_30px_rgba(0,0,0,0.5)] border-b border-white/5"
-          : "bg-transparent py-6"
+          ? "bg-white/90 backdrop-blur-md py-4 shadow-sm border-b border-gray-200"
+          : "bg-white/50 backdrop-blur-sm py-6"
       }`}
     >
       <div className="container mx-auto px-6 max-w-7xl">
@@ -59,15 +60,15 @@ export default function Header() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`text-sm tracking-wide transition-all duration-300 hover:text-accent relative ${
-                  pathname === link.href ? "text-accent font-medium" : "text-white/80"
+                className={`text-sm tracking-wide transition-all duration-300 hover:text-primary relative ${
+                  pathname === link.href ? "text-primary font-bold" : "text-gray-700"
                 }`}
               >
                 {link.name}
                 {pathname === link.href && (
                   <motion.div
                     layoutId="underline"
-                    className="absolute -bottom-2 w-full h-[2px] bg-accent"
+                    className="absolute -bottom-2 w-full h-[2px] bg-primary"
                   />
                 )}
               </Link>
@@ -78,7 +79,7 @@ export default function Header() {
           <div className="hidden md:block">
             <Link
               href="/appointment"
-              className="px-6 py-2.5 bg-gradient-to-r from-primary to-accent text-white hover:shadow-[0_0_15px_rgba(44,188,228,0.5)] transition-all duration-300 rounded-full text-sm font-medium hover:scale-105 active:scale-95 inline-block"
+              className="px-6 py-2.5 bg-primary text-white transition-all duration-300 rounded-full text-sm font-medium hover:scale-105 active:scale-95 hover:shadow-md inline-block"
             >
               Book Appointment
             </Link>
@@ -86,7 +87,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white/80 hover:text-white p-2"
+            className="md:hidden text-gray-700 hover:text-gray-900 p-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -102,7 +103,7 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-full left-0 right-0 bg-dark-900 border-b border-white/10 shadow-2xl md:hidden"
+            className="absolute top-full left-0 right-0 bg-white border-b border-gray-200 shadow-lg md:hidden"
           >
             <nav className="flex flex-col py-4 px-6 space-y-4">
               {navLinks.map((link) => (
@@ -110,16 +111,16 @@ export default function Header() {
                   key={link.name}
                   href={link.href}
                   className={`text-lg transition-colors ${
-                    pathname === link.href ? "text-accent" : "text-white/80"
+                    pathname === link.href ? "text-primary font-bold" : "text-gray-700"
                   }`}
                 >
                   {link.name}
                 </Link>
               ))}
-              <div className="pt-4 border-t border-white/10">
+              <div className="pt-4 border-t border-gray-200">
                 <Link
                   href="/appointment"
-                  className="w-full block text-center px-6 py-3 bg-gradient-to-r from-primary to-accent text-white rounded-md font-medium"
+                  className="w-full block text-center px-6 py-3 bg-primary text-white rounded-md font-medium"
                 >
                   Book Appointment
                 </Link>

@@ -28,7 +28,7 @@ const SERVICES = [
   { name: "Dental Health Scanner", desc: "Comprehensive intraoral imaging for complete oral mappings.", extendedDesc: "Benefits: Detects hidden issues early and tracks oral health over time.\n\nProcedure: A non-invasive wand effortlessly scans teeth in real-time, displaying structural models instantly.\n\nWhy it is recommended: A crucial step for thorough diagnostic checkups and treatment simulations." },
 ];
 
-export default function Specialities() {
+export default function Treatments() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   const toggleExpand = (idx: number) => {
@@ -36,7 +36,7 @@ export default function Specialities() {
   };
 
   return (
-    <div className="pt-32 pb-24 px-6 min-h-screen">
+    <div className="pt-32 pb-24 px-6 min-h-screen bg-neutral-50 text-gray-900">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16">
           <motion.h1
@@ -44,13 +44,13 @@ export default function Specialities() {
             animate={{ opacity: 1, y: 0 }}
             className="font-heading text-5xl md:text-6xl font-bold mb-6"
           >
-            Our Specialities
+            Our Treatments
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-white/60 max-w-2xl mx-auto text-lg"
+            className="text-gray-600 max-w-2xl mx-auto text-lg"
           >
             A comprehensive suite of premium dental services, utilizing state-of-the-art technology for unparalleled results.
           </motion.p>
@@ -61,23 +61,23 @@ export default function Specialities() {
             <AnimatedCard
               key={idx}
               delay={idx * 0.05}
-              className="group border border-white/5 hover:border-accent/40 bg-dark-900/60 transition-colors h-full flex flex-col overflow-hidden"
+              className="group border border-gray-200 hover:border-primary bg-white transition-colors h-full flex flex-col overflow-hidden shadow-sm hover:shadow-md"
             >
               {/* IMAGE */}
               <img
                 src={getImagePath(service.name)}
                 alt={service.name}
-                className="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110"
+                className="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-105 border-b border-gray-100"
                 onError={(e) => (e.currentTarget.src = "/images/services/default.jpg")}
               />
 
               {/* CONTENT */}
               <div className="p-6 flex flex-col flex-grow">
-                <h3 className="font-heading text-xl font-bold text-white mb-3 hover:text-accent transition-colors">
+                <h3 className="font-heading text-xl font-bold text-gray-900 mb-3 hover:text-primary transition-colors">
                   {service.name}
                 </h3>
 
-                <p className="text-white/50 text-sm leading-relaxed">
+                <p className="text-gray-600 text-sm leading-relaxed">
                   {service.desc}
                 </p>
 
@@ -93,7 +93,7 @@ export default function Specialities() {
                         exit={{ opacity: 0, height: 0, marginTop: 0 }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                       >
-                        <div className="pt-4 border-t border-white/10 text-white/40 text-sm leading-relaxed whitespace-pre-line">
+                        <div className="pt-4 border-t border-gray-100 text-gray-700 text-sm leading-relaxed whitespace-pre-line">
                           {service.extendedDesc}
                         </div>
                       </motion.div>
@@ -103,7 +103,7 @@ export default function Specialities() {
 
                 <div 
                   onClick={() => toggleExpand(idx)}
-                  className="mt-6 pt-4 border-t border-white/5 text-xs text-accent font-bold uppercase tracking-widest cursor-pointer hover:text-white transition-colors flex justify-between items-center"
+                  className="mt-6 pt-4 border-t border-gray-100 text-xs text-primary font-bold uppercase tracking-widest cursor-pointer hover:text-gray-900 transition-colors flex justify-between items-center"
                 >
                   <span>{expandedIndex === idx ? "Show Less" : "Learn More"}</span>
                   <motion.div

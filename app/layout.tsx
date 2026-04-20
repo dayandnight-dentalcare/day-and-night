@@ -15,8 +15,9 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Day & Night Dental Clinic | Premium Dental Care",
+  title: "Day & Night Dental Clinic | Premium Dental Care Srikakulam",
   description: "Precision Dentistry. Beautiful Smiles. Day & Night Care. Experience advanced dental care with our ultimate smile design.",
+  keywords: "Braces treatment in Srikakulam, Dental clinic near me, Aligners specialist, Non-extraction orthodontic treatment",
 };
 
 export default function RootLayout({
@@ -29,7 +30,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${playfair.variable} h-full antialiased`}
     >
-      <body className="flex min-h-screen flex-col bg-dark-900 text-white font-sans selection:bg-accent selection:text-dark-900">
+      <body className="flex min-h-screen flex-col bg-white text-gray-900 font-sans selection:bg-primary selection:text-white">
         <Header />
         <main className="flex-grow flex flex-col">{children}</main>
         <Footer />

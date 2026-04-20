@@ -53,7 +53,7 @@ export default function BeforeAfterSlider({ beforeImage, afterImage }: BeforeAft
 
   return (
     <div 
-      className="relative w-full aspect-[4/3] md:aspect-video rounded-2xl overflow-hidden shadow-2xl border border-white/10 group cursor-ew-resize bg-dark-800"
+      className="relative w-full aspect-[4/3] md:aspect-video rounded-2xl overflow-hidden shadow-md border border-gray-200 group cursor-ew-resize bg-neutral-100"
       ref={containerRef}
       onMouseDown={(e) => {
         setIsDragging(true);
@@ -88,14 +88,14 @@ export default function BeforeAfterSlider({ beforeImage, afterImage }: BeforeAft
           alt="After Smile Design"
           className="w-full h-full object-cover object-center"
         />
-        <div className="absolute top-4 right-4 bg-accent text-dark-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider backdrop-blur-sm shadow-lg pointer-events-none">
+        <div className="absolute top-4 right-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider backdrop-blur-sm shadow-sm pointer-events-none">
           After
         </div>
       </div>
 
       {/* Slider Handle */}
       <div 
-        className="absolute top-0 bottom-0 z-20 w-1 bg-primary cursor-ew-resize flex items-center justify-center group-hover:bg-accent transition-colors shadow-[0_0_10px_rgba(87,91,163,0.5)]"
+        className="absolute top-0 bottom-0 z-20 w-1 bg-primary cursor-ew-resize flex items-center justify-center group-hover:bg-accent transition-colors shadow-sm"
         style={{ left: `calc(${sliderPosition}% - 2px)` }}
       >
         <div className="absolute w-8 h-8 bg-primary group-hover:bg-accent rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110 -ml-4">
@@ -106,7 +106,7 @@ export default function BeforeAfterSlider({ beforeImage, afterImage }: BeforeAft
       
       {/* Glow Effect */}
       <div 
-        className="absolute inset-0 z-0 shadow-[inset_0_0_50px_rgba(0,0,0,0.8)] pointer-events-none" 
+        className="absolute inset-0 z-0 pointer-events-none" 
       />
     </div>
   );

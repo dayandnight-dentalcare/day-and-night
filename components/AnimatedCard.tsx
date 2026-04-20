@@ -22,7 +22,7 @@ export default function AnimatedCard({ children, className = "", delay = 0 }: An
       }}
       whileHover={{ 
         y: -10, 
-        boxShadow: "0 20px 40px -10px rgba(44, 188, 228, 0.2), 0 0 15px rgba(44, 188, 228, 0.1)",
+        boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)",
         transition: { duration: 0.3 }
       }}
       className={`glass rounded-2xl overflow-hidden ${className}`}
