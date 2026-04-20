@@ -35,12 +35,12 @@ export default function About() {
               <div>
                 <h2 className="text-accent text-sm font-bold tracking-widest uppercase mb-4">Founder & Lead Clinician</h2>
                 <h3 className="font-heading text-4xl md:text-5xl font-bold text-white mb-2">Dr. Killamsetty Sai Sandeep</h3>
-                <p className="text-accent text-xl font-medium tracking-wide">MDS Orthodontist | Aligners & Braces Specialist</p>
+                <p className="text-accent text-xl font-medium tracking-wide">Braces & Clips Specialist | Aligners Expert</p>
               </div>
               
               <div className="space-y-6 text-white/70 text-lg leading-relaxed font-light">
                 <p>
-                  Dr. Sai Sandeep is a highly skilled and experienced orthodontist specializing in advanced teeth alignment and smile transformation treatments. With expertise in clear aligners, braces, and digital smile designing, he has helped numerous patients achieve confident and aesthetically pleasing smiles. His approach focuses on precision, patient comfort, and long-term results.
+                  With over 13 years of experience in advanced dental and braces treatments, Dr. Sai Sandeep is the best braces doctor in Srikakulam. He is specialized in non-extraction treatment methods, focusing on preserving natural teeth while achieving perfect alignment. Highly skilled in clear aligners, structural clips, and patient-friendly care, he has helped numerous patients achieve confident and aesthetically pleasing smiles.
                 </p>
               </div>
 

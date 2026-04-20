@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { Search, Calendar, Sparkles, ChevronRight } from "lucide-react";
 import AnimatedCard from "@/components/AnimatedCard";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
-import InfiniteCarousel from "@/components/InfiniteCarousel";
 
 const getImagePath = (name: string) => {
   return `/images/services/${name.toLowerCase().replace(/\s+/g, "-")}.jpg`;
@@ -17,11 +16,7 @@ const SERVICES = [
 ];
 
 const DOCTORS = [
-  { name: "Dr. Killamsetty Sai Sandeep", role: "MDS Orthodontist", image: "/images/dr-sai-sandeep.jpg" },
-  { name: "Dr. Priya Sharma", role: "Implantologist", image: "https://images.unsplash.com/photo-1594824436998-058b231b14ea?auto=format&fit=crop&w=400&q=80" },
-  { name: "Dr. Ramesh Kumar", role: "Cosmetic Dentist", image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&q=80" },
-  { name: "Dr. Ananya Reddy", role: "Endodontist", image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&q=80" },
-  { name: "Dr. Vikram Singh", role: "Pediatric Dentist", image: "https://images.unsplash.com/photo-1622902046580-2b47f47f5471?auto=format&fit=crop&w=400&q=80" }
+  { name: "Dr. Killamsetty Sai Sandeep", role: "Braces & Clips Specialist | Aligners Expert", image: "/images/dr-sai-sandeep.jpg" }
 ];
 
 const GALLERY = [
@@ -55,7 +50,7 @@ export default function Home() {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Day & Night Care.</span>
               </h1>
               <p className="text-white/70 text-lg md:text-xl max-w-lg leading-relaxed font-light">
-                Experience one of the best dental clinics in Srikakulam, delivering advanced orthodontic and cosmetic treatments with precision and care. Led by Dr. Killamsetty Sai Sandeep, a renowned MDS Orthodontist, we specialize in aligners, braces, and smile designing to create confident, healthy, and lasting smiles.
+                One of the best dental clinics in Srikakulam for clips and braces treatments. With over 13 years of experience in advanced dental and braces treatments, we specialize in non-extraction treatment methods to create confident, healthy smiles.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Link href="/appointment" className="px-8 py-4 bg-gradient-to-r from-primary to-accent text-white rounded-full font-medium text-center hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(44,188,228,0.4)]">
@@ -199,32 +194,36 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. TEAM SECTION */}
+      {/* 5. MEET OUR SPECIALIST SECTION */}
       <section className="py-24 overflow-hidden border-t border-white/5">
         <div className="container mx-auto px-6 max-w-7xl text-center mb-16">
-          <h2 className="text-accent text-sm font-bold tracking-widest uppercase mb-2">Master Clinicians</h2>
-          <h3 className="font-heading text-4xl md:text-5xl font-bold">Meet The Designers</h3>
+          <h2 className="text-accent text-sm font-bold tracking-widest uppercase mb-2">Lead Clinician</h2>
+          <h3 className="font-heading text-4xl md:text-5xl font-bold mb-4">Meet Our Specialist</h3>
+          <p className="text-white/70 max-w-2xl mx-auto">
+            Providing the best clips treatment in Srikakulam with a focus on preserving natural teeth.
+          </p>
         </div>
 
-        <InfiniteCarousel speed="normal">
-          {DOCTORS.map((doc, idx) => (
-            <div key={idx} className="w-[300px] flex-shrink-0 group relative overflow-hidden rounded-2xl glass">
-              <div className="aspect-[4/5] relative">
-                <div className="absolute inset-0 bg-dark-900/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={doc.image}
-                  alt={doc.name}
-                  className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
-                />
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-dark-900 via-dark-900/80 to-transparent z-20">
-                  <h4 className="font-heading text-xl font-bold text-white mb-1 group-hover:text-accent transition-colors">{doc.name}</h4>
-                  <p className="text-accent text-sm font-medium">{doc.role}</p>
-                </div>
+        <div className="flex justify-center px-6">
+          <div className="w-full max-w-sm group relative overflow-hidden rounded-2xl glass hover:shadow-[0_0_30px_rgba(44,188,228,0.2)] transition-shadow duration-500">
+            <div className="aspect-[4/5] relative">
+              <div className="absolute inset-0 bg-dark-900/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={DOCTORS[0].image}
+                alt={DOCTORS[0].name}
+                className="w-full h-full object-cover grayscale-[0.2] opacity-90 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+              />
+              <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-dark-900 via-dark-900/90 to-transparent z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                <h4 className="font-heading text-2xl font-bold text-white mb-2 group-hover:text-accent transition-colors">{DOCTORS[0].name}</h4>
+                <p className="text-accent text-sm font-medium mb-3">{DOCTORS[0].role}</p>
+                <p className="text-white/80 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  With over 13 years of experience in advanced dental and braces treatments. Specialized in non-extraction treatment methods, preserving natural teeth while achieving perfect alignment.
+                </p>
               </div>
             </div>
-          ))}
-        </InfiniteCarousel>
+          </div>
+        </div>
       </section>
 
       {/* 6. GALLERY PREVIEW */}

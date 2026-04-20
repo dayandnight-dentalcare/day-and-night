@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import AnimatedCard from "@/components/AnimatedCard";
+import AnimatedCard from "../../components/AnimatedCard";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
@@ -18,14 +18,14 @@ export default function Team() {
     <div className="pt-32 pb-24 px-6 min-h-screen">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-20">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="font-heading text-5xl md:text-6xl font-bold mb-6"
           >
             The Signature Designers
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -40,9 +40,9 @@ export default function Team() {
             <AnimatedCard key={idx} delay={idx * 0.1} className="group overflow-hidden rounded-2xl glass p-0 border border-white/10 hover:border-accent/50 transition-colors">
               <div className="aspect-[3/4] relative overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img 
-                  src={doc.image} 
-                  alt={doc.name} 
+                <img
+                  src={doc.image}
+                  alt={doc.name}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/40 to-transparent" />
