@@ -31,17 +31,17 @@ const GALLERY = [
 
 const HERO_SLIDES = [
   {
-    image: "*/images/services/dental-implants.jpg",
+    image: "/images/services/dental-implants.jpg",
     title: "Advanced Dental Implants",
     description: "Permanent, natural-looking tooth replacement solutions.",
   },
   {
-    image: "*/images/services/clear-aligners.jpg",
+    image: "/images/services/clear-aligners.jpg",
     title: "Invisible Aligners & Clips",
     description: "Straighten your teeth comfortably without visible braces.",
   },
   {
-    image: "*/images/services/root-canal-treatment.jpg",
+    image: "/images/services/root-canal-treatment.jpg",
     title: "Painless Root Canal Treatment",
     description: "Save your natural teeth with advanced pain-free procedures.",
   }
