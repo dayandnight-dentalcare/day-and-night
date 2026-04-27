@@ -1,27 +1,64 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Calendar, Clock, MapPin, Phone } from "lucide-react";
+import { Calendar, Clock, MapPin, Phone, Loader2 } from "lucide-react";
 import { useState } from "react";
 
 export default function Appointment() {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    email: "",
     date: "",
-    time: "",
-    reason: ""
+    treatment: "",
+    notes: ""
   });
+  
+  const [errors, setErrors] = useState({
+    phone: "",
+    submit: ""
+  });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Proceed with form handling
-    alert("Thank you. We will confirm your appointment shortly.");
+    
+    setErrors({ phone: "", submit: "" });
+
+    // Validate phone: exactly 10 digits, starts with 6, 7, 8, or 9
+    const phoneRegex = /^[6-9]\d{9}$/;
+    if (!phoneRegex.test(formData.phone)) {
+      setErrors(prev => ({ ...prev, phone: "Please enter a valid 10-digit Indian mobile number (e.g. 9876543210)." }));
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const text = `*New Appointment Inquiry*%0A%0A*Name:* ${formData.name}%0A*Phone:* ${formData.phone}${formData.date ? `%0A*Preferred Date:* ${formData.date}` : ""}%0A*Treatment/Concern:* ${formData.treatment}${formData.notes ? `%0A*Additional Notes:* ${formData.notes}` : ""}`;
+      
+      // WhatsApp number for booking handover
+      const whatsappNumber = "918977383622";
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${text}`;
+
+      // Brief delay to show loading state
+      setTimeout(() => {
+        window.open(whatsappUrl, "_blank");
+        setIsSubmitting(false);
+      }, 800);
+
+    } catch (error) {
+      setErrors(prev => ({ ...prev, submit: "Failed to redirect to WhatsApp. Please try again." }));
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
+    // Clear phone error when user types
+    if (name === "phone" && errors.phone) {
+      setErrors(prev => ({ ...prev, phone: "" }));
+    }
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
@@ -91,11 +128,17 @@ export default function Appointment() {
           >
             
             <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
-              <h3 className="font-heading text-2xl font-bold text-gray-900 mb-6 pb-4 border-b border-gray-100">Booking Details</h3>
+              <h3 className="font-heading text-2xl font-bold text-gray-900 mb-6 pb-4 border-b border-gray-100">Patient Details</h3>
               
+              {errors.submit && (
+                <div className="p-3 bg-red-50 text-red-600 rounded-lg text-sm border border-red-200">
+                  {errors.submit}
+                </div>
+              )}
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700">Full Name</label>
+                  <label className="text-sm font-medium text-gray-700">Full Name *</label>
                   <input 
                     type="text" 
                     name="name"
@@ -107,83 +150,67 @@ export default function Appointment() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700">Phone Number</label>
+                  <label className="text-sm font-medium text-gray-700">Phone Number *</label>
                   <input 
                     type="tel" 
                     name="phone"
                     required
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-primary shadow-sm transition-colors"
-                    placeholder="Enter your mobile number"
+                    className={`w-full bg-white border ${errors.phone ? 'border-red-500 focus:border-red-500' : 'border-gray-300 focus:border-primary'} rounded-lg px-4 py-3 text-gray-900 placeholder:text-gray-400 focus:outline-none shadow-sm transition-colors`}
+                    placeholder="10-digit mobile number"
                   />
+                  {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
                 </div>
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700">Email Address</label>
-                <input 
-                  type="email" 
-                  name="email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-primary shadow-sm transition-colors"
-                  placeholder="Enter your email address"
-                />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700">Preferred Date</label>
+                  <label className="text-sm font-medium text-gray-700">Preferred Appointment Date (Optional)</label>
                   <div className="relative">
                     <input 
                       type="date" 
                       name="date"
-                      required
                       value={formData.date}
                       onChange={handleChange}
                       className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:border-primary shadow-sm transition-colors appearance-none"
                     />
                   </div>
+                  <p className="text-xs text-gray-500 mt-1">Hint: We will confirm available slots via WhatsApp.</p>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700">Preferred Time</label>
-                  <div className="relative">
-                    <select 
-                      name="time"
-                      required
-                      value={formData.time}
-                      onChange={handleChange}
-                      className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:border-primary shadow-sm transition-colors appearance-none"
-                    >
-                      <option value="" disabled className="bg-white">Select time</option>
-                      <option value="morning" className="bg-white">Morning (8AM - 12PM)</option>
-                      <option value="afternoon" className="bg-white">Afternoon (12PM - 4PM)</option>
-                      <option value="evening" className="bg-white">Evening (4PM - 10PM)</option>
-                    </select>
-                  </div>
+                  <label className="text-sm font-medium text-gray-700">Treatment / Concern *</label>
+                  <input 
+                    type="text" 
+                    name="treatment"
+                    required
+                    value={formData.treatment}
+                    onChange={handleChange}
+                    className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-primary shadow-sm transition-colors"
+                    placeholder="e.g., Toothache, Cleaning, Implants"
+                  />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700">Reason for Visit</label>
+                <label className="text-sm font-medium text-gray-700">Additional Notes / Symptoms (Optional)</label>
                 <textarea 
-                  name="reason"
-                  required
-                  value={formData.reason}
+                  name="notes"
+                  value={formData.notes}
                   onChange={handleChange}
                   rows={4}
                   className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-primary shadow-sm transition-colors resize-none"
-                  placeholder="Describe your concern or treatment need"
+                  placeholder="Describe any symptoms or specific requests..."
                 ></textarea>
               </div>
 
               <button 
                 type="submit"
-                className="w-full py-4 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-sm"
+                disabled={isSubmitting}
+                className="w-full py-4 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-sm disabled:opacity-70 disabled:hover:scale-100 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
-                Confirm Appointment
+                {isSubmitting && <Loader2 className="animate-spin" size={20} />}
+                {isSubmitting ? "Redirecting to WhatsApp..." : "Continue to WhatsApp to Book"}
               </button>
             </form>
           </motion.div>
