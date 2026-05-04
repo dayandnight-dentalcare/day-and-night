@@ -3,6 +3,20 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { Calendar, User, ChevronRight, ArrowLeft } from "lucide-react";
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = BLOG_POSTS.find((p) => p.slug === slug);
+  if (!post) {
+    return { title: "Post Not Found" };
+  }
+  return {
+    title: (post as any).seoTitle || post.title,
+    description: post.excerpt,
+    keywords: (post as any).keywords || "",
+  };
+}
 
 export default async function BlogPost({
   params,
@@ -61,11 +75,18 @@ export default async function BlogPost({
 
           {/* Content */}
           <div className="space-y-6">
-            {post.content.split("\n\n").map((para, i) => (
-              <p key={i} className="text-gray-700 leading-relaxed">
-                {para}
-              </p>
-            ))}
+            {(post as any).contentHTML ? (
+              <div 
+                className="prose max-w-none text-gray-700 leading-relaxed space-y-6" 
+                dangerouslySetInnerHTML={{ __html: (post as any).contentHTML }} 
+              />
+            ) : (
+              post.content?.split("\n\n").map((para, i) => (
+                <p key={i} className="text-gray-700 leading-relaxed">
+                  {para}
+                </p>
+              ))
+            )}
           </div>
 
           {/* CTA */}

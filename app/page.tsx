@@ -163,8 +163,98 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 1.5. PRICING PREVIEW SECTION */}
+      <section className="py-24 relative z-20 bg-white">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="text-center mb-16">
+            <h2 className="text-sm font-bold tracking-[0.2em] text-primary uppercase mb-4">Transparent Pricing</h2>
+            <h3 className="font-heading text-4xl md:text-5xl font-bold mb-4 text-gray-900">Know Your Approximate Treatment Cost</h3>
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+              Transparent dental pricing to help you plan your smile journey with confidence.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {/* Card 1 */}
+            <AnimatedCard delay={0.1} className="group p-8 border border-gray-200 rounded-2xl hover:border-primary/50 hover:shadow-lg transition-all duration-300 bg-white relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500"></div>
+              <h4 className="text-xl font-bold text-gray-900 mb-2">Dental Implants</h4>
+              <p className="text-sm text-gray-500 mb-4 font-medium uppercase tracking-wider">Permanent & Natural</p>
+              <div className="flex items-baseline gap-2">
+                <span className="text-sm text-gray-500">Starting from</span>
+                <span className="text-2xl font-bold text-primary">₹30,000</span>
+              </div>
+            </AnimatedCard>
+
+            {/* Card 2 */}
+            <AnimatedCard delay={0.2} className="group p-8 border border-gray-200 rounded-2xl hover:border-primary/50 hover:shadow-lg transition-all duration-300 bg-white relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500"></div>
+              <h4 className="text-xl font-bold text-gray-900 mb-2">Clear Aligners</h4>
+              <p className="text-sm text-gray-500 mb-4 font-medium uppercase tracking-wider">Invisible & Comfortable</p>
+              <div className="flex items-baseline gap-2">
+                <span className="text-2xl font-bold text-primary">₹1,00,000</span>
+                <span className="text-sm text-gray-500">onwards</span>
+              </div>
+            </AnimatedCard>
+
+            {/* Card 3 */}
+            <AnimatedCard delay={0.3} className="group p-8 border border-gray-200 rounded-2xl hover:border-primary/50 hover:shadow-lg transition-all duration-300 bg-white relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500"></div>
+              <h4 className="text-xl font-bold text-gray-900 mb-2">Root Canal Treatment</h4>
+              <p className="text-sm text-gray-500 mb-4 font-medium uppercase tracking-wider">Painless & Safe</p>
+              <div className="flex items-baseline gap-2">
+                <span className="text-sm text-gray-500">Starting from</span>
+                <span className="text-2xl font-bold text-primary">₹3,000</span>
+              </div>
+            </AnimatedCard>
+
+            {/* Card 4 */}
+            <AnimatedCard delay={0.4} className="group p-8 border border-gray-200 rounded-2xl hover:border-primary/50 hover:shadow-lg transition-all duration-300 bg-white relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500"></div>
+              <h4 className="text-xl font-bold text-gray-900 mb-2">Braces / Clips</h4>
+              <p className="text-sm text-gray-500 mb-4 font-medium uppercase tracking-wider">Perfect Alignment</p>
+              <div className="flex items-baseline gap-2">
+                <span className="text-sm text-gray-500">Starting from</span>
+                <span className="text-2xl font-bold text-primary">₹25,000</span>
+              </div>
+            </AnimatedCard>
+
+            {/* Card 5 */}
+            <AnimatedCard delay={0.5} className="group p-8 border border-gray-200 rounded-2xl hover:border-primary/50 hover:shadow-lg transition-all duration-300 bg-white relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500"></div>
+              <h4 className="text-xl font-bold text-gray-900 mb-2">Painless Tooth Extraction</h4>
+              <p className="text-sm text-gray-500 mb-4 font-medium uppercase tracking-wider">Quick & Gentle</p>
+              <div className="flex items-baseline gap-2">
+                <span className="text-sm text-gray-500">Starting from</span>
+                <span className="text-2xl font-bold text-primary">₹500</span>
+              </div>
+            </AnimatedCard>
+
+            {/* Card 6 */}
+            <AnimatedCard delay={0.6} className="group p-8 border border-gray-200 rounded-2xl hover:border-primary/50 hover:shadow-lg transition-all duration-300 bg-white relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500"></div>
+              <h4 className="text-xl font-bold text-gray-900 mb-2">Zirconia Crown</h4>
+              <p className="text-sm text-gray-500 mb-4 font-medium uppercase tracking-wider">Highly Durable</p>
+              <div className="flex items-baseline gap-2">
+                <span className="text-sm text-gray-500">Starting from</span>
+                <span className="text-2xl font-bold text-primary">₹6,000</span>
+              </div>
+            </AnimatedCard>
+          </div>
+
+          <div className="mt-12 text-center max-w-2xl mx-auto flex flex-col items-center">
+            <Link href="/blog/dental-treatment-cost-srikakulam" className="inline-flex items-center justify-center px-8 py-4 bg-primary text-white rounded-full font-bold hover:bg-primary/90 transition-all shadow-md group mb-6">
+              View Complete Treatment Price Guide <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <p className="text-xs text-gray-400 italic">
+              * Final treatment cost may vary based on clinical condition, diagnostic scans, material type, and treatment complexity.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* 2. FEATURE GRID SECTION */}
-      <section className="py-20 relative z-20 mt-12 md:mt-24 bg-neutral-50 border-y border-gray-100">
+      <section className="py-20 relative z-20 bg-neutral-50 border-y border-gray-100">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 pt-8">
             <AnimatedCard delay={0.1} className="p-8 bg-white border border-gray-200 shadow-sm rounded-2xl h-full flex flex-col justify-between">
