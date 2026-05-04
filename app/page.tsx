@@ -163,158 +163,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 1.5. PRICING PREVIEW SECTION */}
-      <section className="py-24 relative z-20 bg-white">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="text-center mb-16">
-            <h2 className="text-sm font-bold tracking-[0.2em] text-primary uppercase mb-4">Transparent Pricing</h2>
-            <h3 className="font-heading text-4xl md:text-5xl font-bold mb-4 text-gray-900">Know Your Approximate Treatment Cost</h3>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              Transparent dental pricing to help you plan your smile journey with confidence.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {/* Card 1 */}
-            <AnimatedCard delay={0.1} className="group p-8 border border-gray-200 rounded-2xl hover:border-primary/50 hover:shadow-lg transition-all duration-300 bg-white relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500"></div>
-              <h4 className="text-xl font-bold text-gray-900 mb-2">Dental Implants</h4>
-              <p className="text-sm text-gray-500 mb-4 font-medium uppercase tracking-wider">Permanent & Natural</p>
-              <div className="flex items-baseline gap-2">
-                <span className="text-sm text-gray-500">Starting from</span>
-                <span className="text-2xl font-bold text-primary">₹30,000</span>
-              </div>
-            </AnimatedCard>
-
-            {/* Card 2 */}
-            <AnimatedCard delay={0.2} className="group p-8 border border-gray-200 rounded-2xl hover:border-primary/50 hover:shadow-lg transition-all duration-300 bg-white relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500"></div>
-              <h4 className="text-xl font-bold text-gray-900 mb-2">Clear Aligners</h4>
-              <p className="text-sm text-gray-500 mb-4 font-medium uppercase tracking-wider">Invisible & Comfortable</p>
-              <div className="flex items-baseline gap-2">
-                <span className="text-2xl font-bold text-primary">₹1,00,000</span>
-                <span className="text-sm text-gray-500">onwards</span>
-              </div>
-            </AnimatedCard>
-
-            {/* Card 3 */}
-            <AnimatedCard delay={0.3} className="group p-8 border border-gray-200 rounded-2xl hover:border-primary/50 hover:shadow-lg transition-all duration-300 bg-white relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500"></div>
-              <h4 className="text-xl font-bold text-gray-900 mb-2">Root Canal Treatment</h4>
-              <p className="text-sm text-gray-500 mb-4 font-medium uppercase tracking-wider">Painless & Safe</p>
-              <div className="flex items-baseline gap-2">
-                <span className="text-sm text-gray-500">Starting from</span>
-                <span className="text-2xl font-bold text-primary">₹3,000</span>
-              </div>
-            </AnimatedCard>
-
-            {/* Card 4 */}
-            <AnimatedCard delay={0.4} className="group p-8 border border-gray-200 rounded-2xl hover:border-primary/50 hover:shadow-lg transition-all duration-300 bg-white relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500"></div>
-              <h4 className="text-xl font-bold text-gray-900 mb-2">Braces / Clips</h4>
-              <p className="text-sm text-gray-500 mb-4 font-medium uppercase tracking-wider">Perfect Alignment</p>
-              <div className="flex items-baseline gap-2">
-                <span className="text-sm text-gray-500">Starting from</span>
-                <span className="text-2xl font-bold text-primary">₹25,000</span>
-              </div>
-            </AnimatedCard>
-
-            {/* Card 5 */}
-            <AnimatedCard delay={0.5} className="group p-8 border border-gray-200 rounded-2xl hover:border-primary/50 hover:shadow-lg transition-all duration-300 bg-white relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500"></div>
-              <h4 className="text-xl font-bold text-gray-900 mb-2">Painless Tooth Extraction</h4>
-              <p className="text-sm text-gray-500 mb-4 font-medium uppercase tracking-wider">Quick & Gentle</p>
-              <div className="flex items-baseline gap-2">
-                <span className="text-sm text-gray-500">Starting from</span>
-                <span className="text-2xl font-bold text-primary">₹500</span>
-              </div>
-            </AnimatedCard>
-
-            {/* Card 6 */}
-            <AnimatedCard delay={0.6} className="group p-8 border border-gray-200 rounded-2xl hover:border-primary/50 hover:shadow-lg transition-all duration-300 bg-white relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500"></div>
-              <h4 className="text-xl font-bold text-gray-900 mb-2">Zirconia Crown</h4>
-              <p className="text-sm text-gray-500 mb-4 font-medium uppercase tracking-wider">Highly Durable</p>
-              <div className="flex items-baseline gap-2">
-                <span className="text-sm text-gray-500">Starting from</span>
-                <span className="text-2xl font-bold text-primary">₹6,000</span>
-              </div>
-            </AnimatedCard>
-          </div>
-
-          <div className="mt-12 text-center max-w-2xl mx-auto flex flex-col items-center">
-            <Link href="/blog/dental-treatment-cost-srikakulam" className="inline-flex items-center justify-center px-8 py-4 bg-primary text-white rounded-full font-bold hover:bg-primary/90 transition-all shadow-md group mb-6">
-              View Complete Treatment Price Guide <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <p className="text-xs text-gray-400 italic">
-              * Final treatment cost may vary based on clinical condition, diagnostic scans, material type, and treatment complexity.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 2. FEATURE GRID SECTION */}
-      <section className="py-20 relative z-20 bg-neutral-50 border-y border-gray-100">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 pt-8">
-            <AnimatedCard delay={0.1} className="p-8 bg-white border border-gray-200 shadow-sm rounded-2xl h-full flex flex-col justify-between">
-              <div>
-                <Search className="w-12 h-12 text-primary mb-6" />
-                <h3 className="font-heading text-2xl font-bold mb-4 text-gray-900">Search Smile Designer</h3>
-                <p className="text-gray-600 leading-relaxed text-sm">
-                  Explore our directory to find your ideal expert. Filter by expertise and find the perfect match for your tailored smile goals.
-                </p>
-              </div>
-            </AnimatedCard>
-
-            <AnimatedCard delay={0.2} className="relative p-1 bg-white h-full flex flex-col justify-between transform md:-translate-y-6 shadow-md rounded-2xl border border-gray-200 hover:-translate-y-8 transition-transform z-10">
-              <div className="bg-white rounded-2xl p-8 h-full flex flex-col justify-between">
-                <div>
-                  <Calendar className="w-12 h-12 text-primary mb-6" />
-                  <h3 className="font-heading text-2xl font-bold mb-4 text-gray-900">Book Appointment</h3>
-                  <p className="text-gray-600 leading-relaxed text-sm mb-8">
-                    Select your preferred time to schedule an appointment. Our premium booking platform makes it seamless and convenient.
-                  </p>
-                </div>
-                <Link href="/appointment" className="w-full py-3 bg-primary text-white font-bold text-center rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 shadow-sm">
-                  Schedule Now <ChevronRight size={16} />
-                </Link>
-              </div>
-            </AnimatedCard>
-
-            <AnimatedCard delay={0.3} className="p-8 bg-white border border-gray-200 shadow-sm rounded-2xl h-full flex flex-col justify-between">
-              <div>
-                <Sparkles className="w-12 h-12 text-primary mb-6" />
-                <h3 className="font-heading text-2xl font-bold mb-4 text-gray-900">Experience Transformation</h3>
-                <p className="text-gray-600 leading-relaxed text-sm">
-                  Attend your appointment to start the journey towards your dream smile using advanced digital and aesthetic techniques.
-                </p>
-              </div>
-            </AnimatedCard>
-          </div>
-        </div>
-      </section>
-
-      {/* 2.5. REAL PATIENT TRANSFORMATIONS */}
-      <section className="py-24 relative z-20 bg-white border-b border-gray-100">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="text-center mb-12">
-            <h3 className="font-heading text-4xl md:text-5xl font-bold text-gray-900 mb-4">Real Patient Transformations</h3>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              See the outstanding results our experienced team achieves with advanced dental and cosmetic treatments.
-            </p>
-          </div>
-          <div className="max-w-4xl mx-auto rounded-2xl p-2 bg-neutral-50 shadow-lg border border-gray-100 flex items-center justify-center">
-            <div className="w-full relative z-10 rounded-2xl bg-white shadow-sm overflow-hidden">
-              <BeforeAfterSlider
-                beforeImage="/images/before-image.jpg"
-                afterImage="/images/after-image.jpg"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* 3. ABOUT PREVIEW SECTION */}
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto px-6 max-w-7xl">
@@ -386,34 +234,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. MEET OUR SPECIALIST SECTION */}
-      <section className="py-24 bg-white overflow-hidden border-t border-gray-100">
-        <div className="container mx-auto px-6 max-w-7xl text-center mb-16">
-          <h2 className="text-primary text-sm font-bold tracking-widest uppercase mb-2">Lead Clinician</h2>
-          <h3 className="font-heading text-4xl md:text-5xl font-bold mb-4 text-gray-900">Meet Our Specialist</h3>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Providing the best clips treatment in Srikakulam with a focus on preserving natural teeth.
-          </p>
-        </div>
-
-        <div className="flex justify-center px-6">
-          <div className="w-full max-w-sm group relative overflow-hidden rounded-2xl shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-500 bg-white">
-            <div className="aspect-[4/5] relative">
-              <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500 z-10" />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={DOCTORS[0].image}
-                alt={DOCTORS[0].name}
-                className="w-full h-full object-cover grayscale-[0.2] opacity-90 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
-              />
-              <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-gray-900 via-gray-900/80 to-transparent z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                <h4 className="font-heading text-2xl font-bold text-white mb-2">{DOCTORS[0].name}</h4>
-                <p className="text-primary text-sm font-medium mb-3">{DOCTORS[0].role}</p>
-                <p className="text-gray-200 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  With over 13 years of experience in advanced dental and braces treatments. Specialized in non-extraction treatment methods, preserving natural teeth while achieving perfect alignment.
+      {/* 2. FEATURE GRID SECTION */}
+      <section className="py-20 relative z-20 bg-neutral-50 border-y border-gray-100">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 pt-8">
+            <AnimatedCard delay={0.1} className="p-8 bg-white border border-gray-200 shadow-sm rounded-2xl h-full flex flex-col justify-between">
+              <div>
+                <Search className="w-12 h-12 text-primary mb-6" />
+                <h3 className="font-heading text-2xl font-bold mb-4 text-gray-900">Search Smile Designer</h3>
+                <p className="text-gray-600 leading-relaxed text-sm">
+                  Explore our directory to find your ideal expert. Filter by expertise and find the perfect match for your tailored smile goals.
                 </p>
               </div>
-            </div>
+            </AnimatedCard>
+
+            <AnimatedCard delay={0.2} className="relative p-1 bg-white h-full flex flex-col justify-between transform md:-translate-y-6 shadow-md rounded-2xl border border-gray-200 hover:-translate-y-8 transition-transform z-10">
+              <div className="bg-white rounded-2xl p-8 h-full flex flex-col justify-between">
+                <div>
+                  <Calendar className="w-12 h-12 text-primary mb-6" />
+                  <h3 className="font-heading text-2xl font-bold mb-4 text-gray-900">Book Appointment</h3>
+                  <p className="text-gray-600 leading-relaxed text-sm mb-8">
+                    Select your preferred time to schedule an appointment. Our premium booking platform makes it seamless and convenient.
+                  </p>
+                </div>
+                <Link href="/appointment" className="w-full py-3 bg-primary text-white font-bold text-center rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 shadow-sm">
+                  Schedule Now <ChevronRight size={16} />
+                </Link>
+              </div>
+            </AnimatedCard>
+
+            <AnimatedCard delay={0.3} className="p-8 bg-white border border-gray-200 shadow-sm rounded-2xl h-full flex flex-col justify-between">
+              <div>
+                <Sparkles className="w-12 h-12 text-primary mb-6" />
+                <h3 className="font-heading text-2xl font-bold mb-4 text-gray-900">Experience Transformation</h3>
+                <p className="text-gray-600 leading-relaxed text-sm">
+                  Attend your appointment to start the journey towards your dream smile using advanced digital and aesthetic techniques.
+                </p>
+              </div>
+            </AnimatedCard>
           </div>
         </div>
       </section>
@@ -469,6 +327,58 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 2.5. REAL PATIENT TRANSFORMATIONS */}
+      <section className="py-24 relative z-20 bg-white border-b border-gray-100">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="text-center mb-12">
+            <h3 className="font-heading text-4xl md:text-5xl font-bold text-gray-900 mb-4">Real Patient Transformations</h3>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              See the outstanding results our experienced team achieves with advanced dental and cosmetic treatments.
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto rounded-2xl p-2 bg-neutral-50 shadow-lg border border-gray-100 flex items-center justify-center">
+            <div className="w-full relative z-10 rounded-2xl bg-white shadow-sm overflow-hidden">
+              <BeforeAfterSlider
+                beforeImage="/images/before-image.jpg"
+                afterImage="/images/after-image.jpg"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. MEET OUR SPECIALIST SECTION */}
+      <section className="py-24 bg-white overflow-hidden border-t border-gray-100">
+        <div className="container mx-auto px-6 max-w-7xl text-center mb-16">
+          <h2 className="text-primary text-sm font-bold tracking-widest uppercase mb-2">Lead Clinician</h2>
+          <h3 className="font-heading text-4xl md:text-5xl font-bold mb-4 text-gray-900">Meet Our Specialist</h3>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Providing the best clips treatment in Srikakulam with a focus on preserving natural teeth.
+          </p>
+        </div>
+
+        <div className="flex justify-center px-6">
+          <div className="w-full max-w-sm group relative overflow-hidden rounded-2xl shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-500 bg-white">
+            <div className="aspect-[4/5] relative">
+              <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500 z-10" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={DOCTORS[0].image}
+                alt={DOCTORS[0].name}
+                className="w-full h-full object-cover grayscale-[0.2] opacity-90 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+              />
+              <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-gray-900 via-gray-900/80 to-transparent z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                <h4 className="font-heading text-2xl font-bold text-white mb-2">{DOCTORS[0].name}</h4>
+                <p className="text-primary text-sm font-medium mb-3">{DOCTORS[0].role}</p>
+                <p className="text-gray-200 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  With over 13 years of experience in advanced dental and braces treatments. Specialized in non-extraction treatment methods, preserving natural teeth while achieving perfect alignment.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 8. FINAL CTA */}
       <section className="py-24 px-6 relative bg-white">
         <div className="container mx-auto max-w-5xl relative z-10">
@@ -488,6 +398,6 @@ export default function Home() {
         </div>
       </section>
 
-    </div>
+        </div>
   );
 }

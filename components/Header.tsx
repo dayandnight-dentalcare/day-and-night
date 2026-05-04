@@ -35,10 +35,8 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/90 backdrop-blur-md py-4 shadow-sm border-b border-gray-200"
-          : "bg-white/50 backdrop-blur-sm py-6"
+      className={`fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-gray-100 transition-all duration-300 ${
+        isScrolled ? "py-3" : "py-4 md:py-5"
       }`}
     >
       <div className="container mx-auto px-6 max-w-7xl">
@@ -50,7 +48,7 @@ export default function Header() {
               alt="Day & Night Dental Clinic" 
               width={150} 
               height={50} 
-              className="h-10 w-auto hover:opacity-80 transition-opacity duration-300"
+              className="h-8 md:h-10 w-auto hover:opacity-80 transition-opacity duration-300"
             />
           </Link>
 
