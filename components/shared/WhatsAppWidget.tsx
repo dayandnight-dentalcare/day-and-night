@@ -3,14 +3,17 @@
 import React from "react";
 
 export function WhatsAppWidget() {
-  // Replace this with your actual clinic number (must include country code 91, no plus sign)
-  const clinicNumber = "918977383622"; 
+  // Pulls the number directly from the .env file
+  const clinicNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER; 
   
   // The pre-filled message. Notice it contains the word "book" to trigger your webhook!
   const message = "Hi! I would like to book an appointment.";
   
   // Create the wa.me link and properly encode the spaces in the message
   const waLink = `https://wa.me/${clinicNumber}?text=${encodeURIComponent(message)}`;
+
+  // Return null or a fallback UI if the environment variable is missing
+  if (!clinicNumber) return null;
 
   return (
     <a
