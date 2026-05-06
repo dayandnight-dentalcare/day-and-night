@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Search, Calendar, Sparkles, ChevronRight, ChevronLeft } from "lucide-react";
 import AnimatedCard from "@/components/AnimatedCard";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import { BLOG_POSTS } from "./blog/data";
 
 const getImagePath = (name: string) => {
   return `/images/services/${name.toLowerCase().replace(/\s+/g, "-")}.jpg`;
@@ -31,17 +32,17 @@ const GALLERY = [
 
 const HERO_SLIDES = [
   {
-    image: "/images/services/dental-implants.jpg",
+    image: "/images/dental-implant.png",
     title: "Advanced Dental Implants",
     description: "Permanent, natural-looking tooth replacement solutions.",
   },
   {
-    image: "/images/services/clear-aligners.jpg",
+    image: "/images/invisible-aligners.png",
     title: "Invisible Aligners & Clips",
     description: "Straighten your teeth comfortably without visible braces.",
   },
   {
-    image: "/images/services/root-canal-treatment.jpg",
+    image: "/images/root-canal.png",
     title: "Painless Root Canal Treatment",
     description: "Save your natural teeth with advanced pain-free procedures.",
   }
@@ -234,11 +235,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. FEATURE GRID SECTION */}
-      <section className="py-20 relative z-20 bg-neutral-50 border-y border-gray-100">
+      {/* 4. FEATURE GRID SECTION (Book Appointment) */}
+      <section className="py-20 relative z-20 bg-white border-b border-gray-100">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 pt-8">
-            <AnimatedCard delay={0.1} className="p-8 bg-white border border-gray-200 shadow-sm rounded-2xl h-full flex flex-col justify-between">
+            <AnimatedCard delay={0.1} className="p-8 bg-neutral-50 border border-gray-200 shadow-sm rounded-2xl h-full flex flex-col justify-between">
               <div>
                 <Search className="w-12 h-12 text-primary mb-6" />
                 <h3 className="font-heading text-2xl font-bold mb-4 text-gray-900">Search Smile Designer</h3>
@@ -263,7 +264,7 @@ export default function Home() {
               </div>
             </AnimatedCard>
 
-            <AnimatedCard delay={0.3} className="p-8 bg-white border border-gray-200 shadow-sm rounded-2xl h-full flex flex-col justify-between">
+            <AnimatedCard delay={0.3} className="p-8 bg-neutral-50 border border-gray-200 shadow-sm rounded-2xl h-full flex flex-col justify-between">
               <div>
                 <Sparkles className="w-12 h-12 text-primary mb-6" />
                 <h3 className="font-heading text-2xl font-bold mb-4 text-gray-900">Experience Transformation</h3>
@@ -276,8 +277,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. GALLERY PREVIEW */}
-      <section className="py-24 bg-neutral-50 border-t border-gray-100">
+      {/* 5. GALLERY PREVIEW (Patient Smile Transformations) */}
+      <section className="py-24 bg-neutral-50 border-b border-gray-100">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center mb-16">
             <h3 className="font-heading text-4xl md:text-5xl font-bold mb-4 text-gray-900">Real Smiles, Real Transformations</h3>
@@ -327,7 +328,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2.5. REAL PATIENT TRANSFORMATIONS */}
+      {/* 6. BEFORE/AFTER SLIDER (Real Patient Transformations) */}
       <section className="py-24 relative z-20 bg-white border-b border-gray-100">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center mb-12">
@@ -347,8 +348,58 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. MEET OUR SPECIALIST SECTION */}
-      <section className="py-24 bg-white overflow-hidden border-t border-gray-100">
+      {/* 7. BLOGS PREVIEW */}
+      <section className="py-24 bg-neutral-50 border-b border-gray-100">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16">
+            <div>
+              <h2 className="text-primary text-sm font-bold tracking-widest uppercase mb-2">Patient Education</h2>
+              <h3 className="font-heading text-4xl md:text-5xl font-bold mb-4 text-gray-900">Latest from our Blog</h3>
+              <p className="text-gray-600 max-w-2xl leading-relaxed">
+                Stay updated with the latest in digital dentistry, smile care tips, and expert insights from our specialized team.
+              </p>
+            </div>
+            <Link href="/blog" className="hidden md:flex items-center text-primary hover:text-primary/80 transition-colors font-medium">
+              View All Articles <ChevronRight size={20} className="ml-1" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {BLOG_POSTS.slice(0, 3).map((post, idx) => (
+              <AnimatedCard key={post.slug} delay={idx * 0.1} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 hover:border-primary hover:shadow-md transition-all group p-0 flex flex-col h-full">
+                <div className="relative h-56 overflow-hidden">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-primary shadow-sm">
+                    {post.category}
+                  </div>
+                </div>
+                <div className="p-6 flex flex-col flex-grow">
+                  <p className="text-gray-500 text-sm mb-3 font-medium">{post.date}</p>
+                  <h4 className="font-heading text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors line-clamp-2">{post.title}</h4>
+                  <p className="text-gray-600 text-sm mb-6 flex-grow line-clamp-3 leading-relaxed">{post.excerpt}</p>
+                  <Link href={`/blog/${post.slug}`} className="inline-flex items-center text-primary font-bold hover:gap-2 transition-all">
+                    Read Article <ChevronRight size={16} className="ml-1" />
+                  </Link>
+                </div>
+              </AnimatedCard>
+            ))}
+          </div>
+          
+          <div className="mt-12 text-center md:hidden w-full flex justify-center">
+            <Link href="/blog" className="inline-flex items-center justify-center px-8 py-3 bg-white border border-primary text-primary hover:bg-neutral-50 shadow-sm font-bold rounded-full transition-all duration-300">
+              View All Articles
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* MEET OUR SPECIALIST SECTION */}
+      <section className="py-24 bg-white overflow-hidden border-b border-gray-100">
         <div className="container mx-auto px-6 max-w-7xl text-center mb-16">
           <h2 className="text-primary text-sm font-bold tracking-widest uppercase mb-2">Lead Clinician</h2>
           <h3 className="font-heading text-4xl md:text-5xl font-bold mb-4 text-gray-900">Meet Our Specialist</h3>
@@ -379,10 +430,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 8. FINAL CTA */}
-      <section className="py-24 px-6 relative bg-white">
+      {/* FINAL CTA */}
+      <section className="py-24 px-6 relative bg-neutral-50 border-b border-gray-100">
         <div className="container mx-auto max-w-5xl relative z-10">
-          <div className="bg-primary/5 rounded-[40px] p-12 md:p-20 text-center relative overflow-hidden border border-primary/20 shadow-sm">
+          <div className="bg-white rounded-[40px] p-12 md:p-20 text-center relative overflow-hidden border border-gray-200 shadow-sm">
             <div className="relative z-10">
               <h2 className="font-heading text-4xl md:text-5xl lg:text-5xl font-bold mb-6 text-gray-900">
                 Ready to Transform Your Smile?

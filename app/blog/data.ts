@@ -15,7 +15,7 @@ export const BLOG_POSTS = [
       <p class="mb-4">At Day & Night Dental Clinic, we believe in complete transparency. We know that many patients want to understand the <strong>dental treatment cost in Srikakulam</strong> before they even step into the clinic. Knowing the cost upfront helps you plan your smile journey with confidence, without any hidden surprises.</p>
       
       <h2 class="text-2xl font-bold mt-8 mb-4">Complete Dental Treatment Price List (2026)</h2>
-      <p class="mb-4">Below is our comprehensive price guide for the most common dental procedures. Please note that these are approximate starting prices, and the final cost may vary based on clinical condition, diagnostic scans, material type, and treatment complexity.</p>
+      <p class="mb-4">Below is our comprehensive estimated dental treatment pricing guide arranged under commonly sought dental care categories. Please note that these are approximate treatment ranges, and final costs may vary depending on clinical condition, diagnostic findings, materials used, and treatment complexity.</p>
       
       <div class="overflow-x-auto my-8 border border-gray-200 rounded-xl shadow-sm">
         <table class="w-full text-left border-collapse">
@@ -31,84 +31,70 @@ export const BLOG_POSTS = [
               <td class="py-3 px-6 text-right font-medium">₹200</td>
             </tr>
             <tr class="hover:bg-gray-50 transition-colors">
-              <td class="py-3 px-6">Normal Extraction</td>
-              <td class="py-3 px-6 text-right font-medium">₹500</td>
+              <td class="py-3 px-6">Extraction</td>
+              <td class="py-3 px-6 text-right font-medium">₹600 to ₹2,000</td>
             </tr>
             <tr class="hover:bg-gray-50 transition-colors">
-              <td class="py-3 px-6">Third Molar Extraction</td>
-              <td class="py-3 px-6 text-right font-medium">₹1,500</td>
-            </tr>
-            <tr class="hover:bg-gray-50 transition-colors">
-              <td class="py-3 px-6">Impaction</td>
-              <td class="py-3 px-6 text-right font-medium">₹5,000</td>
-            </tr>
-            <tr class="hover:bg-gray-50 transition-colors">
-              <td class="py-3 px-6">Scaling</td>
+              <td class="py-3 px-6">Dental Scaling</td>
               <td class="py-3 px-6 text-right font-medium">₹1,000 to ₹2,000</td>
             </tr>
             <tr class="hover:bg-gray-50 transition-colors">
-              <td class="py-3 px-6">Filling</td>
-              <td class="py-3 px-6 text-right font-medium">₹600</td>
-            </tr>
-            <tr class="hover:bg-gray-50 transition-colors">
-              <td class="py-3 px-6">Composite Filling</td>
-              <td class="py-3 px-6 text-right font-medium">₹1,500</td>
+              <td class="py-3 px-6">Cosmetic Fillings</td>
+              <td class="py-3 px-6 text-right font-medium">₹800 to ₹1,500</td>
             </tr>
             <tr class="hover:bg-gray-50 transition-colors">
               <td class="py-3 px-6">Root Canal Treatment</td>
-              <td class="py-3 px-6 text-right font-medium">₹3,000</td>
-            </tr>
-            <tr class="hover:bg-gray-50 transition-colors">
-              <td class="py-3 px-6">PFM Crown</td>
-              <td class="py-3 px-6 text-right font-medium">₹2,500</td>
-            </tr>
-            <tr class="hover:bg-gray-50 transition-colors">
-              <td class="py-3 px-6">Ivoclar Crown</td>
-              <td class="py-3 px-6 text-right font-medium">₹3,000</td>
-            </tr>
-            <tr class="hover:bg-gray-50 transition-colors">
-              <td class="py-3 px-6">Zirconium Crown</td>
-              <td class="py-3 px-6 text-right font-medium">₹6,000</td>
+              <td class="py-3 px-6 text-right font-medium">₹3,000 to ₹5,000</td>
             </tr>
             <tr class="hover:bg-gray-50 transition-colors">
               <td class="py-3 px-6">Metal Braces</td>
-              <td class="py-3 px-6 text-right font-medium">₹25,000</td>
-            </tr>
-            <tr class="hover:bg-gray-50 transition-colors">
-              <td class="py-3 px-6">Ceramic Braces</td>
-              <td class="py-3 px-6 text-right font-medium">₹35,000</td>
+              <td class="py-3 px-6 text-right font-medium">₹20,000 to ₹40,000</td>
             </tr>
             <tr class="hover:bg-gray-50 transition-colors">
               <td class="py-3 px-6">Clear Aligners</td>
-              <td class="py-3 px-6 text-right font-medium">₹1,00,000 onwards</td>
+              <td class="py-3 px-6 text-right font-medium">₹25,000 to ₹2,00,000</td>
             </tr>
             <tr class="hover:bg-gray-50 transition-colors">
-              <td class="py-3 px-6">Dental Implant (Basic)</td>
-              <td class="py-3 px-6 text-right font-medium">₹30,000</td>
+              <td class="py-3 px-6">FPD</td>
+              <td class="py-3 px-6 text-right font-medium">₹3,000 onwards</td>
             </tr>
             <tr class="hover:bg-gray-50 transition-colors">
-              <td class="py-3 px-6">Dental Implant (OSSTEM)</td>
-              <td class="py-3 px-6 text-right font-medium">₹40,000</td>
+              <td class="py-3 px-6">Dental Implants</td>
+              <td class="py-3 px-6 text-right font-medium">₹20,000 to ₹45,000</td>
             </tr>
             <tr class="hover:bg-gray-50 transition-colors">
-              <td class="py-3 px-6">Dental Implant (Noble Biocare)</td>
-              <td class="py-3 px-6 text-right font-medium">₹60,000</td>
+              <td class="py-3 px-6">Smile Designing</td>
+              <td class="py-3 px-6 text-right font-medium">₹20,000 to ₹1,50,000</td>
             </tr>
             <tr class="hover:bg-gray-50 transition-colors">
-              <td class="py-3 px-6">Complete Denture</td>
-              <td class="py-3 px-6 text-right font-medium">₹40,000</td>
+              <td class="py-3 px-6">Tooth Whitening</td>
+              <td class="py-3 px-6 text-right font-medium">₹2,000 per tooth</td>
             </tr>
             <tr class="hover:bg-gray-50 transition-colors">
-              <td class="py-3 px-6">Painless Tooth Extraction with Sutures</td>
-              <td class="py-3 px-6 text-right font-medium">₹5,000</td>
+              <td class="py-3 px-6">Gum Depigmentation</td>
+              <td class="py-3 px-6 text-right font-medium">₹7,000 onwards</td>
             </tr>
             <tr class="hover:bg-gray-50 transition-colors">
-              <td class="py-3 px-6">Bleaching</td>
-              <td class="py-3 px-6 text-right font-medium">₹10,000</td>
+              <td class="py-3 px-6">Laser Treatment</td>
+              <td class="py-3 px-6 text-right font-medium">₹3,000 to ₹10,000</td>
+            </tr>
+            <tr class="hover:bg-gray-50 transition-colors">
+              <td class="py-3 px-6">Facial Fracture Surgery</td>
+              <td class="py-3 px-6 text-right font-medium">₹50,000 to ₹1,50,000</td>
+            </tr>
+            <tr class="hover:bg-gray-50 transition-colors">
+              <td class="py-3 px-6">Flap Surgery</td>
+              <td class="py-3 px-6 text-right font-medium">₹10,000 to ₹60,000</td>
+            </tr>
+            <tr class="hover:bg-gray-50 transition-colors">
+              <td class="py-3 px-6">Dental Health Scanner</td>
+              <td class="py-3 px-6 text-right font-medium">Free Consultation Scan</td>
             </tr>
           </tbody>
         </table>
       </div>
+      
+      <p class="text-sm text-gray-500 italic mt-[-1rem] mb-6">*Final treatment charges are determined after clinical consultation and personalized treatment planning.*</p>
 
       <h2 class="text-2xl font-bold mt-8 mb-4">Understanding Your Dental Treatment Costs</h2>
       

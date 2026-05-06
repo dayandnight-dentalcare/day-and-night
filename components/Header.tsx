@@ -16,17 +16,8 @@ const navLinks = [
 ];
 
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   // Close mobile menu on route change
   useEffect(() => {
@@ -34,11 +25,7 @@ export default function Header() {
   }, [pathname]);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-gray-100 transition-all duration-300 ${
-        isScrolled ? "py-3" : "py-4 md:py-5"
-      }`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-gray-100 py-3 md:py-4">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -46,9 +33,9 @@ export default function Header() {
             <Image 
               src="/images/logo-primary.png" 
               alt="Day & Night Dental Clinic" 
-              width={150} 
-              height={50} 
-              className="h-8 md:h-10 w-auto hover:opacity-80 transition-opacity duration-300"
+              width={140} 
+              height={40} 
+              className="h-7 md:h-8 w-auto hover:opacity-80 transition-opacity duration-300"
             />
           </Link>
 
@@ -59,7 +46,7 @@ export default function Header() {
                 key={link.name}
                 href={link.href}
                 className={`text-sm tracking-wide transition-all duration-300 hover:text-primary relative ${
-                  pathname === link.href ? "text-primary font-bold" : "text-gray-700"
+                  pathname === link.href ? "text-primary font-bold" : "text-gray-900 font-medium"
                 }`}
               >
                 {link.name}
@@ -77,7 +64,7 @@ export default function Header() {
           <div className="hidden md:block">
             <Link
               href="/appointment"
-              className="px-6 py-2.5 bg-primary text-white transition-all duration-300 rounded-full text-sm font-medium hover:scale-105 active:scale-95 hover:shadow-md inline-block"
+              className="px-6 py-2.5 bg-primary text-white transition-all duration-300 rounded-full text-sm font-bold hover:scale-105 active:scale-95 shadow-sm inline-block"
             >
               Book Appointment
             </Link>
@@ -85,10 +72,11 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-700 hover:text-gray-900 p-2"
+            className="md:hidden text-gray-900 hover:text-primary p-2 focus:outline-none"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle Menu"
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
         </div>
       </div>
@@ -97,28 +85,28 @@ export default function Header() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
             className="absolute top-full left-0 right-0 bg-white border-b border-gray-200 shadow-lg md:hidden"
           >
-            <nav className="flex flex-col py-4 px-6 space-y-4">
+            <nav className="flex flex-col py-2 px-6 space-y-2 pb-6">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`text-lg transition-colors ${
-                    pathname === link.href ? "text-primary font-bold" : "text-gray-700"
+                  className={`text-base py-3 border-b border-gray-50 transition-colors ${
+                    pathname === link.href ? "text-primary font-bold" : "text-gray-800 font-medium"
                   }`}
                 >
                   {link.name}
                 </Link>
               ))}
-              <div className="pt-4 border-t border-gray-200">
+              <div className="pt-4">
                 <Link
                   href="/appointment"
-                  className="w-full block text-center px-6 py-3 bg-primary text-white rounded-md font-medium"
+                  className="w-full flex justify-center px-6 py-3.5 bg-primary text-white rounded-md font-bold shadow-sm"
                 >
                   Book Appointment
                 </Link>
