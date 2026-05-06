@@ -23,10 +23,10 @@ export default function Footer() {
               Experience the pinnacle of advanced dental care. Precision dentistry for beautiful smiles, day and night.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
+              <a href="https://www.instagram.com/dayandnightdentalcare/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
                 <FaInstagram size={18} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
+              <a href="https://www.facebook.com/dayandnightdentalclinic" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
                 <FaFacebook size={18} />
               </a>
               <a href="#" className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:bg-[#25D366] hover:text-white hover:border-[#25D366] transition-all duration-300">
@@ -90,16 +90,12 @@ export default function Footer() {
             <h4 className="font-heading text-lg text-gray-900 mb-6">Working Hours</h4>
             <ul className="space-y-4">
               <li className="flex justify-between items-center text-sm border-b border-gray-200 pb-2">
-                <span className="text-gray-700">Monday – Friday</span>
-                <span className="text-primary">9:00 AM – 9:00 PM</span>
-              </li>
-              <li className="flex justify-between items-center text-sm border-b border-gray-200 pb-2">
-                <span className="text-gray-700">Saturday</span>
-                <span className="text-primary">9:00 AM – 8:00 PM</span>
+                <span className="text-gray-700">Monday – Saturday</span>
+                <span className="text-primary">9:30 AM – 7:30 PM</span>
               </li>
               <li className="flex justify-between items-center text-sm border-b border-gray-200 pb-2">
                 <span className="text-gray-700">Sunday</span>
-                <span className="text-primary">Emergency Only</span>
+                <span className="text-primary">9:30 AM – 1:00 PM</span>
               </li>
             </ul>
           </div>
