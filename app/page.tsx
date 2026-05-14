@@ -7,16 +7,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Search, Calendar, Sparkles, ChevronRight, ChevronLeft } from "lucide-react";
 import AnimatedCard from "@/components/AnimatedCard";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import TreatmentsSlider from "@/components/TreatmentsSlider";
 import { BLOG_POSTS } from "./blog/data";
 
-const getImagePath = (name: string) => {
-  return `/images/services/${name.toLowerCase().replace(/\s+/g, "-")}.jpg`;
-};
 
-const SERVICES = [
-  "Metal Braces", "Clear Aligners", "Smile Designing", "Root Canal Treatment",
-  "Dental Implants", "Dental Scaling", "Extraction", "Laser Treatment"
-];
 
 const DOCTORS = [
   { name: "Dr. Killamsetty Sai Sandeep", role: "Braces & Clips Specialist | Aligners Expert", image: "/images/dr-sai-sandeep.jpg" }
@@ -190,7 +184,7 @@ export default function Home() {
       </section>
 
       {/* 4. TREATMENTS SECTION */}
-      <section className="py-24 bg-neutral-50 border-t border-gray-100">
+      <section className="py-24 bg-neutral-50 border-t border-gray-100 overflow-hidden w-full">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16">
             <div>
@@ -204,32 +198,17 @@ export default function Home() {
               View All Treatments <ChevronRight size={20} className="ml-1" />
             </Link>
           </div>
+        </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            {SERVICES.map((service, idx) => (
-              <AnimatedCard key={service} delay={idx * 0.05} className="group cursor-pointer border border-gray-200 hover:border-primary bg-white shadow-sm hover:shadow-md rounded-2xl flex flex-col p-0 overflow-hidden">
-                <div className="w-full h-40 overflow-hidden relative border-b border-gray-100">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={getImagePath(service)}
-                    alt={service}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    onError={(e) => (e.currentTarget.src = "/images/services/default.jpg")}
-                  />
-                </div>
-                <div className="p-6 flex flex-col justify-between flex-grow">
-                  <h4 className="font-heading text-lg font-bold text-gray-900 group-hover:text-primary transition-colors">{service}</h4>
-                  <div className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center group-hover:bg-primary group-hover:border-primary group-hover:text-white transition-all ml-auto mt-4 text-gray-400">
-                    <ChevronRight size={16} />
-                  </div>
-                </div>
-              </AnimatedCard>
-            ))}
-          </div>
+        {/* HORIZONTAL SLIDER REPLACING GRID */}
+        <div className="w-full relative mx-auto max-w-[100vw]">
+          <TreatmentsSlider />
+        </div>
 
-          <div className="mt-12 text-center w-full flex justify-center">
+        <div className="container mx-auto px-6 max-w-7xl mt-4">
+          <div className="text-center w-full flex justify-center">
             <Link href="/treatments" className="inline-flex items-center justify-center px-8 py-3 bg-white border border-primary text-primary hover:bg-neutral-50 shadow-sm font-bold rounded-full transition-all duration-300">
-              Show More
+              View All Treatments
             </Link>
           </div>
         </div>
