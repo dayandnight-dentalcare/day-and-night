@@ -90,7 +90,7 @@ export default function TreatmentPage({ params }: { params: Promise<{ slug: stri
                 {treatment.overview}
               </p>
               
-              <div className="bg-blue-50/50 rounded-xl p-6 border border-blue-100 mt-8">
+              <div className="bg-[#575BA3]/5 rounded-xl p-6 border border-[#575BA3]/10 mt-8">
                 <h3 className="font-heading font-bold text-[#575BA3] text-xl mb-3">Who Needs It?</h3>
                 <p className="text-gray-700 leading-relaxed">
                   {treatment.whoNeedsIt}
@@ -99,7 +99,7 @@ export default function TreatmentPage({ params }: { params: Promise<{ slug: stri
             </div>
             
             <div className="relative group">
-              <div className="absolute -inset-2 bg-gradient-to-r from-blue-100 to-teal-100 rounded-[2rem] blur-lg opacity-50 group-hover:opacity-100 transition duration-500"></div>
+              <div className="absolute -inset-2 bg-gradient-to-r from-[#2CBCE4]/20 to-[#575BA3]/20 rounded-[2rem] blur-lg opacity-50 group-hover:opacity-100 transition duration-500"></div>
               <img
                 src={imagePath}
                 alt={`${treatment.name} Overview`}
@@ -111,7 +111,7 @@ export default function TreatmentPage({ params }: { params: Promise<{ slug: stri
               
               {/* Highlight Price Card Overlay */}
               <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-5 border border-gray-100 flex items-center gap-4 animate-bounce-slow">
-                <div className="w-12 h-12 bg-teal-50 rounded-full flex items-center justify-center text-teal-600">
+                <div className="w-12 h-12 bg-[#2CBCE4]/10 rounded-full flex items-center justify-center text-[#2CBCE4]">
                   <IndianRupee size={24} />
                 </div>
                 <div>
@@ -135,10 +135,10 @@ export default function TreatmentPage({ params }: { params: Promise<{ slug: stri
             
             <div className="grid sm:grid-cols-2 gap-6">
               {treatment.benefits.map((benefit, idx) => (
-                <div key={idx} className="bg-gray-50/80 hover:bg-white rounded-2xl p-6 border border-gray-100 hover:border-blue-200 hover:shadow-lg transition-all duration-300 group">
+                <div key={idx} className="bg-gray-50/80 hover:bg-white rounded-2xl p-6 border border-gray-100 hover:border-[#2CBCE4]/30 hover:shadow-lg transition-all duration-300 group">
                   <div className="flex gap-4">
                     <div className="flex-shrink-0 mt-1">
-                      <CheckCircle2 className="text-[#575BA3] group-hover:scale-110 transition-transform" size={24} />
+                      <CheckCircle2 className="text-[#2CBCE4] group-hover:scale-110 transition-transform" size={24} />
                     </div>
                     <div>
                       <h4 className="font-bold text-gray-900 text-lg mb-2">{benefit.title}</h4>
@@ -162,7 +162,7 @@ export default function TreatmentPage({ params }: { params: Promise<{ slug: stri
                   <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-[#575BA3] text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 font-bold z-10">
                     {idx + 1}
                   </div>
-                  <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl bg-white border border-gray-100 shadow-sm group-hover:shadow-md group-hover:border-blue-100 transition-all">
+                  <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl bg-white border border-gray-100 shadow-sm group-hover:shadow-md group-hover:border-[#575BA3]/30 transition-all">
                     <h4 className="font-bold text-lg text-gray-900 mb-2">{step.title}</h4>
                     <p className="text-gray-600 leading-relaxed">{step.description}</p>
                   </div>
@@ -196,7 +196,7 @@ export default function TreatmentPage({ params }: { params: Promise<{ slug: stri
           {/* 7. FAQ SECTION */}
           <div className="mb-16">
             <h2 className="text-3xl font-heading font-bold text-gray-900 mb-8 flex items-center gap-3">
-              <HelpCircle className="text-[#575BA3]" size={32} />
+              <HelpCircle className="text-[#2CBCE4]" size={32} />
               Frequently Asked Questions
             </h2>
             
@@ -204,7 +204,7 @@ export default function TreatmentPage({ params }: { params: Promise<{ slug: stri
               {treatment.faqs.map((faq, idx) => (
                 <div 
                   key={idx} 
-                  className={`border rounded-2xl transition-all duration-300 overflow-hidden ${expandedFaq === idx ? 'border-[#575BA3] shadow-md bg-blue-50/30' : 'border-gray-200 bg-white hover:border-gray-300'}`}
+                  className={`border rounded-2xl transition-all duration-300 overflow-hidden ${expandedFaq === idx ? 'border-[#575BA3] shadow-md bg-[#575BA3]/5' : 'border-gray-200 bg-white hover:border-gray-300'}`}
                 >
                   <button
                     onClick={() => toggleFaq(idx)}
@@ -242,33 +242,27 @@ export default function TreatmentPage({ params }: { params: Promise<{ slug: stri
 
       {/* 8. CTA SECTION */}
       <div className="container mx-auto max-w-5xl px-6 mt-16">
-        <div className="bg-teal-900 rounded-3xl p-8 md:p-16 text-center text-white relative overflow-hidden shadow-2xl">
-          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
+        <div className="bg-gradient-to-br from-[#2CBCE4] to-[#22a1c4] rounded-[2rem] p-8 md:p-16 text-center text-white relative overflow-hidden shadow-2xl shadow-[#2CBCE4]/20">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/20 via-transparent to-transparent mix-blend-overlay"></div>
           
           <div className="relative z-10 max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
               Ready to Transform Your Smile?
             </h2>
-            <p className="text-teal-100 text-lg mb-10">
+            <p className="text-white/90 text-lg mb-10">
               Schedule your personalized consultation for {treatment.name} today and take the first step towards perfect oral health.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link 
-                href="/appointment" 
-                className="w-full sm:w-auto px-8 py-4 bg-white text-teal-900 font-bold rounded-xl hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-1"
-              >
-                <Calendar size={20} />
-                Book Appointment
-              </Link>
+            <div className="flex justify-center items-center">
               <a 
                 href="https://wa.me/919999999999" 
                 target="_blank"
                 rel="noreferrer"
-                className="w-full sm:w-auto px-8 py-4 bg-[#25D366] text-white font-bold rounded-xl hover:bg-[#20bd5a] transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-1"
+                className="group relative px-8 py-4 bg-[#25D366] text-white font-bold rounded-full transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] hover:shadow-[0_6px_20px_rgba(37,211,102,0.23)] hover:-translate-y-1 overflow-hidden"
               >
-                <MessageCircle size={20} />
-                WhatsApp Us
+                <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <MessageCircle size={20} className="relative z-10 group-hover:scale-110 transition-transform" />
+                <span className="relative z-10">WhatsApp Us</span>
               </a>
             </div>
           </div>
