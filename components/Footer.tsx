@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { MapPin, Phone, Mail } from "lucide-react";
-import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
 import Image from "next/image";
 
 export default function Footer() {
@@ -28,9 +28,6 @@ export default function Footer() {
               </a>
               <a href="https://www.facebook.com/dayandnightdentalclinic" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
                 <FaFacebook size={18} />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:bg-[#25D366] hover:text-white hover:border-[#25D366] transition-all duration-300">
-                <FaWhatsapp size={18} />
               </a>
             </div>
           </div>

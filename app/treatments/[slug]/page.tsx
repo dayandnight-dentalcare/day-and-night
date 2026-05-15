@@ -254,16 +254,14 @@ export default function TreatmentPage({ params }: { params: Promise<{ slug: stri
             </p>
             
             <div className="flex justify-center items-center">
-              <a 
-                href="https://wa.me/919999999999" 
-                target="_blank"
-                rel="noreferrer"
-                className="group relative px-8 py-4 bg-[#25D366] text-white font-bold rounded-full transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] hover:shadow-[0_6px_20px_rgba(37,211,102,0.23)] hover:-translate-y-1 overflow-hidden"
+              <Link 
+                href="/appointment" 
+                className="group relative px-8 py-4 bg-[#575BA3] text-white font-bold rounded-full transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_4px_14px_0_rgba(87,91,163,0.39)] hover:shadow-[0_6px_20px_rgba(87,91,163,0.5)] hover:-translate-y-1 overflow-hidden"
               >
                 <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <MessageCircle size={20} className="relative z-10 group-hover:scale-110 transition-transform" />
-                <span className="relative z-10">WhatsApp Us</span>
-              </a>
+                <Calendar size={20} className="relative z-10 group-hover:scale-110 transition-transform" />
+                <span className="relative z-10">Book Appointment</span>
+              </Link>
             </div>
           </div>
         </div>
